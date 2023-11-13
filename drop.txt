@@ -1,0 +1,12 @@
+DROP TABLE "Users" CASCADE;
+
+DROP TABLE "Lessons" CASCADE;
+
+DROP TABLE "Gradebooks" CASCADE;
+
+DROP TABLE "Averages" CASCADE;
+
+DROP TABLE "Roles" CASCADE;
+
+DROP TABLE "Subjects" CASCADE;
+

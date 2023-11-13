@@ -1,0 +1,64 @@
+CREATE TABLE "Users" (
+	"id" INT NOT NULL,
+	"login" varchar NOT NULL,
+	"password" varchar NOT NULL,
+	"name" varchar NOT NULL,
+	"surname" varchar NOT NULL,
+	"role_id" INT NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE "Roles" (
+	"id" INT NOT NULL,
+	"name" varchar NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE "Lessons" (
+	"id" INT NOT NULL,
+	"subject_id" INT NOT NULL,
+	"date" DATE NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE "Subjects" (
+	"id" INT NOT NULL,
+	"name" varchar NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE "Gradebooks" (
+	"id" INT NOT NULL,
+	"student_id" INT NOT NULL,
+	"lesson_id" INT NOT NULL,
+	"grade" INT NOT NULL,
+	"homework_grade" INT NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+CREATE TABLE "Averages" (
+	"id" INT NOT NULL,
+	"student_id" INT NOT NULL,
+	"subject_id" INT NOT NULL,
+	"average_grade" INT NOT NULL,
+	PRIMARY KEY ("id")
+);
+
+ALTER TABLE "Users" ADD CONSTRAINT "Users_fk0" FOREIGN KEY ("role_id") REFERENCES "Roles"("id");
+
+ALTER TABLE "Lessons" ADD CONSTRAINT "Lessons_fk0" FOREIGN KEY ("subject_id") REFERENCES "Subjects"("id");
+
+ALTER TABLE "Gradebooks" ADD CONSTRAINT "Gradebooks_fk0" FOREIGN KEY ("student_id") REFERENCES "Users"("id");
+
+ALTER TABLE "Gradebooks" ADD CONSTRAINT "Gradebooks_fk1" FOREIGN KEY ("lesson_id") REFERENCES "Lessons"("id");
+
+ALTER TABLE "Averages" ADD CONSTRAINT "Averages_fk0" FOREIGN KEY ("student_id") REFERENCES "Users"("id");
+
+ALTER TABLE "Averages" ADD CONSTRAINT "Averages_fk1" FOREIGN KEY ("subject_id") REFERENCES "Subjects"("id");
+
+
+
+
+
+
+
