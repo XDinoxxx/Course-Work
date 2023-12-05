@@ -1,0 +1,18 @@
+﻿@model Users
+
+@{
+    ViewData["Title"] = "Вход";
+}
+
+
+<form asp-action="Autorithation" asp-controller="User">
+    <label asp-for="login"></label>
+    <input asp-for="login" />
+    <span asp-validation-for="login"></span>
+
+    <label asp-for="password"></label>
+    <input asp-for="password" />
+    <span asp-validation-for="password"></span>
+
+    <input type="submit" value="Вход" />
+</form>

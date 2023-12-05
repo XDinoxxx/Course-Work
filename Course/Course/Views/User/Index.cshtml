@@ -1,0 +1,24 @@
+﻿@model Users
+@{
+    ViewData["Title"] = "Регистрация";
+}
+
+<form asp-action="registration" asp-controller="User">
+    <label asp-for="login"></label>
+    <input asp-for="login"/>
+    <span asp-validation-for="login"></span>
+
+    <label asp-for="password"></label>
+    <input asp-for="password"/>
+    <span asp-validation-for="password"></span>
+
+    <label asp-for="name"></label>
+    <input asp-for="name" />
+    <span asp-validation-for="name"></span>
+
+    <label asp-for="surname"></label>
+    <input asp-for="surname" />
+    <span asp-validation-for="surname"></span>
+    
+    <input type="submit" value="Зарегистрироваться"/>
+</form>
