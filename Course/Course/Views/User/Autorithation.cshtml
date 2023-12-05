@@ -5,7 +5,7 @@
 }
 
 
-<form asp-action="Autorithation" asp-controller="User">
+<form asp-action="Autorithation" asp-controller="User" method="post">
     <label asp-for="login"></label>
     <input asp-for="login" />
     <span asp-validation-for="login"></span>
@@ -16,3 +16,8 @@
 
     <input type="submit" value="Вход" />
 </form>
+
+@if (ViewBag.SuccessMessage != null)
+{
+    <div>@ViewBag.SuccessMessage</div>
+}

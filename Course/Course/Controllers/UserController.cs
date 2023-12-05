@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Course.Models;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Course.Controllers
@@ -79,5 +80,17 @@ namespace Course.Controllers
                 return View();
             }
         }
+
+        [HttpPost]
+        public IActionResult Autorithation(Users model)
+        {
+ 
+            Console.WriteLine($"Пользователь {model.login} успешно вошел.");
+
+            ViewBag.SuccessMessage = $"Пользователь {model.login} успешно вошел.";
+
+            return View(); 
+        }
+
     }
 }

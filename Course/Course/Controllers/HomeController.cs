@@ -33,5 +33,9 @@ namespace Course.Controllers
         {
             return View("~/Views/User/Autorithation.cshtml");
         }
+        public IActionResult GoToReg()
+        {
+            return View("~/Views/User/Index.cshtml");
+        }
     }
 }
