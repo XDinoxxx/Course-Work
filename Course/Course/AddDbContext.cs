@@ -13,6 +13,6 @@ namespace Course
         public DbSet<Lessons> Lessons { get; set; }
         public DbSet<Gradebooks> Gradebooks { get; set; }
         public DbSet<Averages> Averages { get; set; }
-        
+
     }
 }

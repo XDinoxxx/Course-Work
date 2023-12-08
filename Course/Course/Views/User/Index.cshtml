@@ -5,11 +5,11 @@
 
 <form asp-action="Register" asp-controller="User" method="post">
     <label asp-for="login"></label>
-    <input asp-for="login"/>
+    <input asp-for="login" />
     <span asp-validation-for="login"></span>
 
     <label asp-for="password"></label>
-    <input asp-for="password"/>
+    <input asp-for="password" />
     <span asp-validation-for="password"></span>
 
     <label asp-for="name"></label>
@@ -19,6 +19,10 @@
     <label asp-for="surname"></label>
     <input asp-for="surname" />
     <span asp-validation-for="surname"></span>
-    
-    <input type="submit" value="Зарегистрироваться"/>
+
+    <label asp-for="role_id"></label>
+    <input asp-for="role_id" />
+    <span asp-validation-for="role_id"></span>
+
+    <input type="submit" value="Зарегистрироваться" />
 </form>

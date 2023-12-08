@@ -1,47 +1,41 @@
 CREATE TABLE "Users" (
-	"id" INT NOT NULL,
+	id SERIAL PRIMARY KEY,
 	"login" varchar NOT NULL,
 	"password" varchar NOT NULL,
 	"name" varchar NOT NULL,
 	"surname" varchar NOT NULL,
-	"role_id" INT NOT NULL,
-	PRIMARY KEY ("id")
+	"role_id" INT NOT NULL
 );
 
 CREATE TABLE "Roles" (
-	"id" INT NOT NULL,
-	"name" varchar NOT NULL,
-	PRIMARY KEY ("id")
+	id SERIAL PRIMARY KEY,
+	"name" varchar NOT NULL
 );
 
 CREATE TABLE "Lessons" (
-	"id" INT NOT NULL,
+	id SERIAL PRIMARY KEY,
 	"subject_id" INT NOT NULL,
-	"date" DATE NOT NULL,
-	PRIMARY KEY ("id")
+	"date" DATE NOT NULL
 );
 
 CREATE TABLE "Subjects" (
-	"id" INT NOT NULL,
-	"name" varchar NOT NULL,
-	PRIMARY KEY ("id")
+	id SERIAL PRIMARY KEY,
+	"name" varchar NOT NULL
 );
 
 CREATE TABLE "Gradebooks" (
-	"id" INT NOT NULL,
+	id SERIAL PRIMARY KEY,
 	"student_id" INT NOT NULL,
 	"lesson_id" INT NOT NULL,
 	"grade" INT NOT NULL,
-	"homework_grade" INT NOT NULL,
-	PRIMARY KEY ("id")
+	"homework_grade" INT NOT NULL
 );
 
 CREATE TABLE "Averages" (
-	"id" INT NOT NULL,
+	id SERIAL PRIMARY KEY,
 	"student_id" INT NOT NULL,
 	"subject_id" INT NOT NULL,
-	"average_grade" INT NOT NULL,
-	PRIMARY KEY ("id")
+	"average_grade" INT NOT NULL
 );
 
 ALTER TABLE "Users" ADD CONSTRAINT "Users_fk0" FOREIGN KEY ("role_id") REFERENCES "Roles"("id");
@@ -55,6 +49,13 @@ ALTER TABLE "Gradebooks" ADD CONSTRAINT "Gradebooks_fk1" FOREIGN KEY ("lesson_id
 ALTER TABLE "Averages" ADD CONSTRAINT "Averages_fk0" FOREIGN KEY ("student_id") REFERENCES "Users"("id");
 
 ALTER TABLE "Averages" ADD CONSTRAINT "Averages_fk1" FOREIGN KEY ("subject_id") REFERENCES "Subjects"("id");
+
+
+
+
+
+
+
 
 
 
