@@ -3,7 +3,7 @@
     ViewData["Title"] = "Регистрация";
 }
 
-<form asp-action="registration" asp-controller="User">
+<form asp-action="Register" asp-controller="User" method="post">
     <label asp-for="login"></label>
     <input asp-for="login"/>
     <span asp-validation-for="login"></span>

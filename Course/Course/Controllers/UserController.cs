@@ -1,11 +1,19 @@
 ﻿using Course.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Course.Controllers
 {
     public class UserController : Controller
     {
+        private readonly AddDbContext _dbContext;
+
+        public UserController(AddDbContext dbContext)
+        {
+            _dbContext = dbContext;
+        }
+
         // GET: UserController
         public ActionResult Index()
         {
@@ -81,15 +89,17 @@ namespace Course.Controllers
             }
         }
 
-        [HttpPost]
-        public IActionResult Autorithation(Users model)
+        public IActionResult Register()
         {
- 
-            Console.WriteLine($"Пользователь {model.login} успешно вошел.");
+            return View();
+        }
 
-            ViewBag.SuccessMessage = $"Пользователь {model.login} успешно вошел.";
-
-            return View(); 
+        [HttpPost]
+        public async Task<IActionResult> Register(Users user)
+        {
+            _dbContext.Users.Add(user);
+            await _dbContext.SaveChangesAsync();
+            return RedirectToAction("Index");
         }
 
     }

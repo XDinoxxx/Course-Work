@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "ZClNh1TB6XyEymY+IitklovuV+g0SlyITaWFz1Kw+cO8wdcHQOHvE+tggoPe5qF2h0aN1gxWb+qa6d8oGE7DOg==",
+  "dgSpecHash": "Z0+2nA6YtnzrJKFeW/4xY2luUSOt2oLXPAFKFijfQC2BTSvUv9a9KfcmwmSEKGbK7GXBKmvW3klP8bpNE7JXKQ==",
   "success": true,
   "projectFilePath": "D:\\GitHub\\Course-Work\\Course\\Course\\Course.csproj",
   "expectedPackageFiles": [
@@ -48,17 +48,17 @@
       "message": "Версия обнаруженного пакета нарушает ограничение зависимости: Npgsql.EntityFramework 2.2.7 требуется Npgsql (= 2.2.7), но в результате разрешения получена версия Npgsql 8.0.1.",
       "libraryId": "Npgsql",
       "targetGraphs": [
-        "net7.0"
+        "net8.0"
       ]
     },
     {
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
-      "message": "Пакет \"Npgsql.EntityFramework 2.2.7\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net7.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
+      "message": "Пакет \"Npgsql.EntityFramework 2.2.7\" был восстановлен с помощью \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\", а не целевой платформы проекта \"net8.0\". Этот пакет может быть не полностью совместим с вашим проектом.",
       "libraryId": "Npgsql.EntityFramework",
       "targetGraphs": [
-        "net7.0"
+        "net8.0"
       ]
     }
   ]
