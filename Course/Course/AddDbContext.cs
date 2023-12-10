@@ -14,5 +14,13 @@ namespace Course
         public DbSet<Gradebooks> Gradebooks { get; set; }
         public DbSet<Averages> Averages { get; set; }
 
+        public int GetUserId(Users user)
+        {
+            // Поиск id по login и password
+            var foundUser = Users.FirstOrDefault(u => u.login == user.login && u.password == user.password);
+
+            // Если пользователь найден, возвращаем его id
+            return foundUser?.id ?? 0; // Возвращаем 0, если пользователь не найден
+        }
     }
 }

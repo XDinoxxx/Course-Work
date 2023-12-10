@@ -21,8 +21,13 @@
     <span asp-validation-for="surname"></span>
 
     <label asp-for="role_id"></label>
-    <input asp-for="role_id" />
+    <select asp-for="role_id">
+        <option value="2">Преподаватель</option>
+        <option value="3">Ученик</option>
+        <option value="4">Родитель</option>
+    </select>
     <span asp-validation-for="role_id"></span>
+
 
     <input type="submit" value="Зарегистрироваться" />
 </form>

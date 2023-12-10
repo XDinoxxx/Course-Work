@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Security;
 
 namespace Course.Controllers
 {
@@ -99,8 +100,28 @@ namespace Course.Controllers
         {
             _dbContext.Users.Add(user);
             await _dbContext.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("Autorithation","User");
         }
 
+        public IActionResult Autorithation()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Autorithation(Users user)
+        {
+            int id = _dbContext.GetUserId(user);
+
+            var foundUser = _dbContext.Users.Find(id);
+            if(foundUser != null)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                return RedirectToAction("Autorithation", "User");
+            }
+        }
     }
 }
