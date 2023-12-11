@@ -1,0 +1,11 @@
+﻿@model Subjects
+@{
+    ViewData["Title"] = "Add Course";
+}
+
+<form asp-action="Add" asp-controller="Subjects" method="post">
+    <label asp-for="name">Название курса</label>
+    <input asp-for="name" />
+
+    <input type="submit" value="Добавить" />
+</form>
