@@ -16,11 +16,9 @@ namespace Course
 
         public int GetUserId(Users user)
         {
-            // Поиск id по login и password
             var foundUser = Users.FirstOrDefault(u => u.login == user.login && u.password == user.password);
 
-            // Если пользователь найден, возвращаем его id
-            return foundUser?.id ?? 0; // Возвращаем 0, если пользователь не найден
+            return foundUser?.id ?? 0; 
         }
     }
 }

@@ -1,4 +1,5 @@
 using Course.Models;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
@@ -36,6 +37,25 @@ namespace Course.Controllers
         public IActionResult GoToReg()
         {
             return View("~/Views/User/Index.cshtml");
+        }
+
+        public IActionResult AdminPage()
+        {
+            return View();
+        }
+
+        public IActionResult TeacherPage()
+        {
+            return View();
+        }
+
+        public IActionResult StudentPage()
+        {
+            return View();
+        }
+        public IActionResult ParentPage()
+        {
+            return View();
         }
     }
 }

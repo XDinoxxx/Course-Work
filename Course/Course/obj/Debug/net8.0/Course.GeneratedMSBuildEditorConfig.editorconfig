@@ -18,8 +18,24 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = D:\GitHub\Course-Work\Course\Course
 build_property._RazorSourceGeneratorDebug = 
 
+[D:/GitHub/Course-Work/Course/Course/Views/Home/AdminPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxBZG1pblBhZ2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [D:/GitHub/Course-Work/Course/Course/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Course-Work/Course/Course/Views/Home/ParentPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQYXJlbnRQYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Course-Work/Course/Course/Views/Home/StudentPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxTdHVkZW50UGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/GitHub/Course-Work/Course/Course/Views/Home/TeacherPage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxUZWFjaGVyUGFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [D:/GitHub/Course-Work/Course/Course/Views/Shared/Error.cshtml]

@@ -109,14 +109,33 @@ namespace Course.Controllers
         }
 
         [HttpPost]
-        public IActionResult Autorithation(Users user)
+        public async Task<IActionResult> Autorithation(Users user)
         {
             int id = _dbContext.GetUserId(user);
 
             var foundUser = _dbContext.Users.Find(id);
             if(foundUser != null)
             {
-                return RedirectToAction("Index", "Home");
+                if(foundUser.role_id == 1)
+                {
+                    return RedirectToAction("AdminPage","Home");
+                }
+                else if(foundUser.role_id == 2)
+                {
+                    return RedirectToAction("TeacherPage", "Home");
+                }
+                else if (foundUser.role_id == 3)
+                {
+                    return RedirectToAction("StudentPage", "Home");
+                }
+                else if (foundUser.role_id == 4)
+                {
+                    return RedirectToAction("ParentPage", "Home");
+                }
+                else 
+                { 
+                    return RedirectToAction("Index", "Home");
+                }
             }
             else
             {
