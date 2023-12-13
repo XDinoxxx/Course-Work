@@ -1,6 +1,7 @@
 ﻿using Course.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Course.Controllers
 {
@@ -11,7 +12,7 @@ namespace Course.Controllers
 
         public SubjectsController(AddDbContext context)
         {
-            context = _dbContext;
+            _dbContext = context;
         }
 
         // GET: SubjectsController1

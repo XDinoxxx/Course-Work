@@ -8,10 +8,12 @@ namespace Course.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly AddDbContext _context;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, AddDbContext context)
         {
             _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
@@ -46,7 +48,8 @@ namespace Course.Controllers
 
         public IActionResult TeacherPage()
         {
-            return View();
+            var subjects = _context.Subjects.ToList();
+            return View(subjects);
         }
 
         public IActionResult StudentPage()
