@@ -1,4 +1,7 @@
-﻿namespace Course.Models
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace Course.Models
 {
     public class Lessons
     {

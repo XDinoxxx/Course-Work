@@ -9,7 +9,6 @@ namespace Course.Controllers
     {
         private readonly ILogger<HomeController> _logger;
         private readonly AddDbContext _context;
-
         public HomeController(ILogger<HomeController> logger, AddDbContext context)
         {
             _logger = logger;
@@ -54,11 +53,25 @@ namespace Course.Controllers
 
         public IActionResult StudentPage()
         {
-            return View();
+            int studentId = (int)TempData["studentId"];
+
+            List<Gradebooks> gradebooksList = _context.GetGradebooks(studentId);
+            List<Subjects> subjectsList = _context.GetSubjects();
+
+            var viewModel = new Mixed 
+            {
+                gradebooks = gradebooksList,
+                subjects = subjectsList
+            };
+
+            return View(viewModel);
         }
         public IActionResult ParentPage()
         {
-            return View();
+            int parent_id = (int)TempData["parentId"];
+            var child_id = _context.Parents.Where(p => p.parent_id == parent_id).Select(p => p.child_id).ToList();
+            var grades = _context.Gradebooks.Where(g => child_id.Contains(g.student_id)).ToList();
+            return View(grades);
         }
     }
 }

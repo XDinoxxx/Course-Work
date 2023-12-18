@@ -38,6 +38,11 @@ CREATE TABLE "Averages" (
 	"average_grade" INT NOT NULL
 );
 
+CREATE TABLE "Parents" (
+	id SERIAL PRIMARY KEY,
+	"child_id" INT NOT NULL
+);
+
 ALTER TABLE "Users" ADD CONSTRAINT "Users_fk0" FOREIGN KEY ("role_id") REFERENCES "Roles"("id");
 
 ALTER TABLE "Lessons" ADD CONSTRAINT "Lessons_fk0" FOREIGN KEY ("subject_id") REFERENCES "Subjects"("id");
@@ -50,7 +55,9 @@ ALTER TABLE "Averages" ADD CONSTRAINT "Averages_fk0" FOREIGN KEY ("student_id") 
 
 ALTER TABLE "Averages" ADD CONSTRAINT "Averages_fk1" FOREIGN KEY ("subject_id") REFERENCES "Subjects"("id");
 
+ALTER TABLE "Parents" ADD CONSTRAINT "Parents_fk0" FOREIGN KEY ("child_id") REFERENCES "Users"("id");
 
+ALTER TABLE "Parents" ADD CONSTRAINT "Parents_fk1" FOREIGN KEY ("parent_id") REFERENCES "Users"("id");
 
 
 

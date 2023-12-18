@@ -6,12 +6,12 @@
 
 
 <form asp-action="Autorithation" asp-controller="User" method="post">
-    <label asp-for="login"></label>
+    <label asp-for="login">Логин</label>
     <input asp-for="login" />
     <span asp-validation-for="login"></span>
 
-    <label asp-for="password"></label>
-    <input asp-for="password" />
+    <label asp-for="password">Пароль</label>
+    <input type="password" asp-for="password" />
     <span asp-validation-for="password"></span>
 
     <input type="submit" value="Вход" />

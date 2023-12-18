@@ -9,7 +9,6 @@ namespace Course.Controllers
     public class UserController : Controller
     {
         private readonly AddDbContext _dbContext;
-
         public UserController(AddDbContext dbContext)
         {
             _dbContext = dbContext;
@@ -112,7 +111,6 @@ namespace Course.Controllers
         public async Task<IActionResult> Autorithation(Users user)
         {
             int id = _dbContext.GetUserId(user);
-
             var foundUser = _dbContext.Users.Find(id);
             if(foundUser != null)
             {
@@ -126,10 +124,12 @@ namespace Course.Controllers
                 }
                 else if (foundUser.role_id == 3)
                 {
+                    TempData["studentId"] = id;
                     return RedirectToAction("StudentPage", "Home");
                 }
                 else if (foundUser.role_id == 4)
                 {
+                    TempData["parentId"] = id;
                     return RedirectToAction("ParentPage", "Home");
                 }
                 else 

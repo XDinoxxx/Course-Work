@@ -1,7 +1,29 @@
-﻿@{
+﻿@model Mixed
+@{
     ViewData["Title"] = "Страница ученика";
 }
 
-<h1>
-    Student
-</h1>
+<h2>
+    Оценки
+</h2>
+<ul>
+    @foreach(var gradebook in Model.gradebooks)
+    {
+        <li>
+            @gradebook.grade и @gradebook.homework_grade
+        </li>
+    }
+</ul>
+
+
+<h2>
+    Курсы
+</h2>
+<ul>
+    @foreach (var subject in Model.subjects)
+    {
+        <li>
+            @subject.name
+        </li>
+    }
+</ul>
