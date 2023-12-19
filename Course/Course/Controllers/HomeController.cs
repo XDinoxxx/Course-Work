@@ -69,9 +69,19 @@ namespace Course.Controllers
         public IActionResult ParentPage()
         {
             int parent_id = (int)TempData["parentId"];
-            var child_id = _context.Parents.Where(p => p.parent_id == parent_id).Select(p => p.child_id).ToList();
-            var grades = _context.Gradebooks.Where(g => child_id.Contains(g.student_id)).ToList();
-            return View(grades);
+            /*var child_id = _context.Parents.Where(p => p.parent_id == parent_id).Select(p => p.child_id).ToList();
+            var grades = _context.Gradebooks.Where(g => child_id.Contains(g.student_id)).ToList();*/
+            var gradebooksWithChildName = from parent in _context.Parents
+                                          where parent.parent_id == parent_id
+                                          join child in _context.Users on parent.child_id equals child.id
+                                          join gradebook in _context.Gradebooks on child.id equals gradebook.student_id into childGrades
+                                          select new ChildrensData
+                                          {
+                                              name = child.name + " " + child.surname,
+                                              grades = childGrades.Select(grade => new Gradebooks{ grade = grade.grade, homework_grade = grade.homework_grade })
+                                          };
+
+            return View(gradebooksWithChildName.ToList());
         }
     }
 }

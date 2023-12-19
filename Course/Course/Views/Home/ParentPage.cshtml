@@ -1,4 +1,4 @@
-﻿@model List<Gradebooks>
+﻿@model List<ChildrensData>
 @{
     ViewData["Title"] = "Страница родителей";
 }
@@ -6,11 +6,17 @@
 <h2>
     Оценки 
 </h2>
-<ul>
-    @foreach(var grade in Model)
-    {
-        <li>
-            @grade.grade и @grade.homework_grade
-        </li>
-    }
-</ul>
+
+@foreach (var item in Model)
+{
+    <div>
+        @item.name
+        @foreach (var grade in item.grades)
+        {
+            <div>
+                Оценка: @grade.grade, Домашняя работа: @grade.homework_grade
+            </div>
+        }
+    </div>
+}
+
